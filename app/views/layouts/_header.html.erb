@@ -1,0 +1,15 @@
+<div class="container">
+  <%= link_to "logo", root_path %>
+    <ul>
+      <% if logged_in? %>
+        <li><%= link_to "プロフィール", current_user %></li>
+        <li><%= link_to "編集", edit_user_path(current_user) %></li>
+        <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "ログイン", login_path %></li>
+        <li><%= link_to "新規登録", signup_path %></li>
+      <% end %>
+    </ul>
+
+  
+</div>

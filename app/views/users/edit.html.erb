@@ -1,5 +1,5 @@
 <%= render 'layouts/header' %>
-<h1>新規登録</h1>
+<h1>ユーザー編集</h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user, url: signup_path) do |f| %>
@@ -16,7 +16,7 @@
       <%= f.label :パスワードの確認 %>
       <%= f.password_field :password_field %>
 
-      <%= f.submit "登録", class: "btn btn-primary" %>
+      <%= f.submit "編集を保存", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
