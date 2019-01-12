@@ -1,3 +1,20 @@
 <%= render 'layouts/header' %>
-<h1>Pages#top</h1>
-<p>Find me in app/views/pages/top.html.erb</p>
+
+<% if logged_in? %>
+  <div class="row">
+    <div class="col-md-6">
+      <section>
+        <%= form_for(@micropost) do |f| %>
+          <%= f.text_area :content, placeholder: "あなたが考えるifを投稿してみよう" %>
+          <%= f.submit "投稿", class: "btn btn-primary" %>
+        <% end %>
+      </section>
+      <section>
+        <%= link_to current_user.name, user_path(current_user) %>
+        <p>投稿数<%= current_user.microposts.count %></p>
+      </section>
+    </div>
+  </div>
+<% else %>
+  <h1>ようこそif_appへ</h1>
+<% end %>
