@@ -5,7 +5,16 @@
     <div class="col-md-6">
       <section>
         <%= form_for(@micropost) do |f| %>
+          <%= f.text_field :title, placeholder: "タイトル" %>
           <%= f.text_area :content, placeholder: "あなたが考えるifを投稿してみよう" %>
+          <div class="field">
+            <div class="micropost-tags-field">
+              <%= f.label "カテゴリー" %>
+              <ul id="micropost-tags">
+              </ul>
+            </div>
+          </div>
+
           <%= f.submit "投稿", class: "btn btn-primary" %>
         <% end %>
       </section>
