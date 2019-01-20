@@ -3,7 +3,7 @@
   <%= micropost.content %>
   <%= link_to "詳細ページ", micropost %>
   <% if current_user?(micropost.user) %>
-    <%= link_to "編集", edit_micropost_path %>
+    <%= link_to "編集", edit_micropost_path(micropost) %>
     <%= link_to "削除", micropost, method: :delete, data: {confirm: "削除してよろしいですか？" } %>
   <% end %>
 </li>

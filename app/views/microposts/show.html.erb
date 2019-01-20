@@ -1,2 +1,11 @@
-<h1>#{@micripost.id}の詳細ページです</h1>
-<%= @micripost.id %>
+<%= @micropost.id %><br>
+<%= @micropost.title %><br>
+<%= @micropost.user_id %><br>
+<%= @micropost.content %><br>
+<ul>
+  <% @micropost.categories.each do |ct| %>
+    <li>
+      <%= ct.name %>
+    </li>
+  <% end %>
+</ul>

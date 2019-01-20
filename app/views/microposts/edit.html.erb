@@ -1,1 +1,16 @@
-dada
+<%= form_for(@micropost) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, size: 40 %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content, cols: 50, lows: 50 %>
+
+  <div class="micropost-tags-field">
+    <%= f.label "カテゴリー" %>
+    <ul id="micropost-tags">
+    </ul>
+    <%= hidden_field_tag :category_hidden, @category_list %>
+  </div>
+
+  <%= f.submit "更新", class: "button"%>
+<% end %>
